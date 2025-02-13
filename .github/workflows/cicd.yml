@@ -58,8 +58,9 @@ jobs:
       run: |
         docker build -t adijaiswal/boardgame:latest .
 
-    - name: Trivy Image Scan
-      run: trivy image --light --format table -o trivy-image-report.html adijaiswal/board:latest
+    - name: Run Trivy Scan
+      if: env.SKIP_TRIVY != 'true'
+      run: trivy image --format table -o trivy-image-report.html adijaiswal/board:latest
 
 
     - name: Login to Docker Hub

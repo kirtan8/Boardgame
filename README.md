@@ -51,3 +51,27 @@ This web application displays lists of board games and their reviews. While anyo
   - username: bugs    |     password: bunny (user role)
   - username: daffy   |     password: duck  (manager role)
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
+
+
+
+1.Install AWS CLI:
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt install unzip
+unzip awscliv2.zip
+sudo ./aws/install
+
+aws configure
+
+sudo chmod 666 /var/run/docker.sock
+
+2.Create credentials:
+
+3.Install terraform
+
+4.Install kubectl
+
+5.To access the cluster run:
+aws eks --region ap-south-1 update-kubeconfig --name devops-cluster
+
+6.create service account and run:
+kubectl describe secret mysecretname -n webapps
